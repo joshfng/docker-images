@@ -1,4 +1,4 @@
-FROM mber5/broadway-baseimage:latest
+FROM joshfng/broadway-base:latest
 
 RUN apt-get update && \
   apt-get dist-upgrade -y

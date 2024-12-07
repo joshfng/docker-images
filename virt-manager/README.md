@@ -5,7 +5,7 @@
 ## Building
 
 ```shell
-docker build -t joshfng/virt-manager:latest .
+docker build --platform linux/amd64,linux/arm64 -t joshfng/virt-manager:latest .
 
 docker push joshfng/virt-manager --all-tags
 ```
