@@ -7,7 +7,7 @@ Includes mongodb and all dependencies
 ## Building
 
 ```shell
-docker build -t joshfng/unifi-network:8.5.6 -t joshfng/unifi-network:latest .
+docker build --platform linux/amd64,linux/arm64 -t joshfng/unifi-network:9.0.92 -t joshfng/unifi-network:latest .
 
 docker push joshfng/unifi-network --all-tags
 ```

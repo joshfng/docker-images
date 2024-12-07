@@ -2,7 +2,7 @@ FROM ubuntu:24.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV APP_NAME=unifi
-ENV APP_VERSION=8.5.6
+ENV APP_VERSION=9.0.92-6h5tz3stx9
 ENV APP_ROOT=/app
 
 USER root
@@ -11,7 +11,7 @@ RUN apt-get update && apt-get -y upgrade
 
 RUN mkdir -p ${APP_ROOT}
 
-RUN apt-get install -y \
+RUN apt-get install -y --no-install-recommends \
   binutils \
   curl \
   gnupg \
@@ -22,6 +22,10 @@ RUN apt-get install -y \
   logrotate \
   openjdk-17-jre-headless \
   tzdata
+
+RUN apt-get clean && \
+  apt-get autoclean && \
+  rm -rf /var/lib/apt/lists/*
 
 # unifi requires mongo v7 but mongo's noble repo only has v8
 RUN curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
