@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:26.04
 
 ENV GDK_BACKEND='broadway'
 ENV BROADWAY_DISPLAY=':5'
